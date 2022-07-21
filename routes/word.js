@@ -24,6 +24,8 @@ router.route('/new').post((req, res) => {
 });
 
 router.route('/match').post((req, res) => {
+    console.log("TEST");
+    console.log(req);
     Word.findOne({word: req.body.word}, (err, word) => {
         if (err) {
             console.log(err);

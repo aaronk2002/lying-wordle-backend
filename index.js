@@ -2,10 +2,11 @@ const express = require('express');
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
+const bodyParser = require('body-parser');
 
 
 // Cors Configuration
-const whitelist = ["https://lie-wordle.netlify.app", "http://localhost:3000"];
+const whitelist = ["https://lie-wordle.netlify.app"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
@@ -35,6 +36,8 @@ db.once("open", function () {
 
 
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
     res.send({data: 'Hello World, from express'});
 });
