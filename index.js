@@ -38,4 +38,6 @@ db.once("open", function () {
 app.get('/', (req, res) => {
     res.send({data: 'Hello World, from express'});
 });
+const wordRouter = require('./routes/word.js');
+app.use('/word', wordRouter);
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
