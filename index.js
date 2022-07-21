@@ -7,7 +7,9 @@ const wordModel = require("./models/WordModel.js");
 const app = express();
 const port = 3001;
 
-app.use(cors());
+app.use(cors());app.use(cors({
+    origin: 'https://lie-wordle.netlify.app'
+}));
 
 mongoose.connect('mongodb+srv://aaron25:7bFEmCUlpcgveK73@cluster0.3q4fpgn.mongodb.net/?retryWrites=true&w=majority',
     {
