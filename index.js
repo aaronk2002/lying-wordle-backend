@@ -5,7 +5,7 @@ const port = process.env.PORT || 5000;
 
 
 // Cors Configuration
-const whitelist = ["https://lie-wordle.netlify.app"];
+const whitelist = ["https://lie-wordle.netlify.app", "http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
