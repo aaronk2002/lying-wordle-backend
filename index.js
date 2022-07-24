@@ -22,7 +22,7 @@ app.use(cors(corsOptions))
 
 // Mongoose Connection
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://aaron25:7bFEmCUlpcgveK73@cluster0.3q4fpgn.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
