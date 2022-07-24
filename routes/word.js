@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { request } = require('express');
 let Word = require('../models/WordModel.js');
 
+
+// Get one random word from DB
 router.route('/').get((req, res) => {
     Word.find((err, words) => {
         if (err) {
@@ -14,6 +16,8 @@ router.route('/').get((req, res) => {
     })
 });
 
+
+// Upload one new word to DB
 router.route('/new').post((req, res) => {
     console.log("Entering /new API");
     const word = req.body.word;
@@ -23,6 +27,8 @@ router.route('/new').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+
+// Check if a string is in the DB
 router.route('/match').post((req, res) => {
     console.log("TEST");
     console.log(req);
@@ -36,6 +42,8 @@ router.route('/match').post((req, res) => {
     })
 });
 
+
+// Erase whole DB
 router.route('/erase').delete((req, res) => {
     console.log('Entering API');
     Word.deleteMany({}, (err, result) => {
@@ -48,4 +56,6 @@ router.route('/erase').delete((req, res) => {
     });
 });
 
+
+// Export
 module.exports = router;

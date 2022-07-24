@@ -35,9 +35,12 @@ db.once("open", function () {
 });
 
 
-
+// Set Body Parser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+
+// Add API's
 app.get('/', (req, res) => {
     res.send({data: 'Hello World, from express'});
 });
