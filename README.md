@@ -1,4 +1,3 @@
-# lying-wordle-backend
+# Back-End of Lying Wordle
 
-The mongoose schemas are in the models folder, the routes are in the routes folder, and index.js is the file that configures the CORS, the mongoose connection, the bodyparser, and the API's.
-The words database were uploaded from the txt file containing most (if not all) English words from https://www-personal.umich.edu/~jlawler/wordlist.html
+This repositoru contains the back-end of the Lying Wordle web app. The front-end repo is https://github.com/aaronk2002/lying-wordle-frontend
