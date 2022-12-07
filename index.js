@@ -27,7 +27,7 @@ app.use(cors(corsOptions)); */
 }); */
 
 var corsOptions = {
-  origin: "*",
+  origin: "https://lie-wordle.netlify.app",
   credentials: true,
 };
 app.use(cors(corsOptions));
