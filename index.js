@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require("cors");
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
@@ -27,7 +28,7 @@ app.use(cors(corsOptions)); */
   next();
 }); */
 
-const corsMiddleware = (req, res, next) => {
+/* const corsMiddleware = (req, res, next) => {
   res = applyCorsHeaders(res);
   if (req.method === 'OPTIONS') {
     res.status(200).end()
@@ -48,7 +49,7 @@ const applyCorsHeaders = res => {
   return res;
 }
 
-app.use(corsMiddleware);
+app.use(corsMiddleware); */
 
 /* var corsOptions = {
   origin: "https://lie-wordle.netlify.app",
