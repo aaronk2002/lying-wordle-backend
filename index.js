@@ -7,6 +7,11 @@ app.use(
       credentials: true,
   })
 );
+app.enableCors({
+  origin: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  credentials: true,
+});
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
