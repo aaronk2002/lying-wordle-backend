@@ -12,6 +12,7 @@ app.enableCors({
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   credentials: true,
 });
+app.options('*', cors());
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
